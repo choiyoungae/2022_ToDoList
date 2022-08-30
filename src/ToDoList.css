@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#toDoList {
+    width: 65%;
+    height: 87vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3%;
+}
+#toDoList .clickedDate {
+    font-family: "GongGothicMedium";
+    font-size: 40px;
+}
+#toDoList .addList {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5%;
+    right: 6%;
+    border-radius: 50%;
+    font-family: "GongGothicLight";
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+    border: 0;
+    background-color: #76baff;
+    color : white;
+}
+#toDoList .addList:hover {
+    box-shadow: 5px 5px 5px #1087ff inset;
+}
+#toDoList .addList:active {
+    background-color: #1087ff;
+}

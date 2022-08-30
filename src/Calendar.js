@@ -3,16 +3,13 @@ import Calendar from "react-calendar";
 import "./Calendar.css"
 import moment from "moment";
 
-function MyCalendar() {
-    
-    const [date, setDate] = useState(new Date())
+function MyCalendar({ date, setDate }) {
 
     return <>
         <div className='app'>
             <Calendar onChange={setDate} value={date}
             formatDay={(locale, date) => moment(date).format("DD")}
             showNeighboringMonth={false} />
-            
         </div>
     </>
 }
