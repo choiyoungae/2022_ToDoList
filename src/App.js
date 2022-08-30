@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import Clock from './Clock'
+import MyCalendar from './Calendar'
 
 const App = () => {
     // 완료된 체크표시
@@ -9,8 +10,8 @@ const App = () => {
     // <i class="fa-solid fa-trash-can"></i>
     return <>
         <div id="clock">{Clock()}</div>
-        <div id="calender"></div>
-        <div id="toDoList"></div>
+        <div id="calendar">{MyCalendar()}</div>
+        <div id="board"></div>
     </>
 }
 
