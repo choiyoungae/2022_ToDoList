@@ -17,8 +17,9 @@ function ToDoList({date}) {
     };
 
     // 추가 클릭시 
-    const handleAdd = (title, content) => {
+    const handleAdd = (title, content, priority) => {
         setOpen(false);
+        console.log("priority : " + priority)
         console.log("title : " + title)
         console.log("content : " + content)
     };
