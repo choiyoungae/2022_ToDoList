@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import './index.css'
 import Clock from './Clock'
 import MyCalendar from './Calendar'
@@ -15,10 +16,12 @@ const App = () => {
     const [date, setDate] = useState(new Date())
     const [memo, setMemo] = useState("")
 
+    const isMinWidth1000 = useMediaQuery({ minWidth: 1000 })
+
     return <>
-        <div id="clock"><Clock /></div>
-        <div id="calendar"><MyCalendar date={date} setDate={setDate} /></div>
-        <div id="board">
+        {isMinWidth1000 ? <div id="clock"><Clock id="clock" /></div> : <></>}
+        {isMinWidth1000 ? <MyCalendar date={date} setDate={setDate} /> : <></>}
+        <div id="board" className={isMinWidth1000 ? "normal" : "full"}>
             <ToDoList date={date} />
             <div id='right-side'>
                 <Saying />

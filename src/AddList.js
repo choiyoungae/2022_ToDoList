@@ -16,7 +16,6 @@ function AddList({ open, handleClose, handleAdd}) {
         <Dialog open={open} onClose={handleClose}>
             <DialogTitle>할 일 추가</DialogTitle>
 
-            <form>
             <DialogContent>
                 
                 <div>
@@ -40,10 +39,6 @@ function AddList({ open, handleClose, handleAdd}) {
                 </DialogActions>
                 
             </DialogContent>
-
-            
-
-            </form>
             
         </Dialog>
 

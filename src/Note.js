@@ -6,7 +6,12 @@ function Note({ memo, setMemo }) {
     return <>
     <div id="note">
         <h3>[MEMO]</h3>
-        <textarea onChange={(e) => setMemo(e.target.value)}>{memo}</textarea>
+        <textarea className="memo-text" onChange={(e) => { 
+            
+            setMemo(e.target.value)
+            localStorage.setItem("memo", e.target.value)
+            
+        }}>{localStorage.getItem("memo")}</textarea>
     </div>
     </>
 }

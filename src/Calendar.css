@@ -5,6 +5,23 @@
     font-style: normal;
 }
 
+#calendar {
+    height: 35vh;
+    background-color: #fff;
+    position: absolute;
+    top: 35%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+#calendar.small {
+    width: 18%;
+    left: 3.5%;
+}
+#calendar.big {
+    width: 23%;
+    left: 3%;
+}
+
 .react-calendar {
     width: 350px;
     max-width: 100%;

@@ -3,7 +3,6 @@
     src: url(../public/font/DS-DIGI.TTF);
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -32,7 +31,7 @@ ul, li {
     color: #fff;
     line-height: 10vh;
     text-align: center;
-    font-size: 70px;
+    font-size: 4vw;
     font-family: "digital-clock";
 }
 
@@ -46,15 +45,26 @@ ul, li {
     box-sizing: border-box;
     padding: 5px;
 }
+/* #calendar.normal {
+    width: 18%;
+}
+#calendar.full {
+    width: 23%
+} */
 
 #board {
-    width: 70%;
     height: 93vh;
     background-color: rgba(255, 255, 255, 0.6);
     position: absolute;
     top: 3.5%;
     right: 1%;
     border-radius: 10px;
+}
+#board.normal {
+    width: 70%;
+}
+#board.full {
+    width: 98%;
 }
 
 #right-side {
