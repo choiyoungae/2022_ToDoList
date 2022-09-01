@@ -57,9 +57,74 @@
 }
 
 /* 리스트 한 개 */
-.aList {
+#aList {
+    font-family: "GongGothicLight";
     width: 100%;
     height: 50px;
     background-color: white;
     border-radius: 25px;
+    position: relative;
+    text-align: left;
+    padding-left: 5%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#aList.checked {
+    color: #bbb;
+}
+
+#aList .list {
+    font-size: 20px;
+    line-height: 50px;
+}
+
+#aList .list .circle {
+    display: inline-block;
+}
+#aList .list .circle.high {
+    color: #e0656c;
+}
+#aList .list .circle.little-high {
+    color: #ed9258;
+}
+#aList .list .circle.middle {
+    color: #e9d275;
+}
+#aList .list .circle.little-low {
+    color: #96ce5b;
+}
+#aList .list .circle.low {
+    color: #819fcb;
+}
+#aList.checked .list .circle {
+    color: #bbb;
+}
+
+#aList .list .title {
+    position: absolute;
+    left: 10%;
+    display: inline-block;
+}
+#aList .list .content {
+    position: absolute;
+    left: 50%;
+    display: inline-block;
+}
+
+#aList #functions {
+    position: absolute;
+    font-size: 24px;
+    right: 23px;
+    top: 13px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#aList #functions i {
+    margin-left: 1vw;
+}
+#aList:hover #functions {
+    opacity: 1;
+    visibility: visible;
 }

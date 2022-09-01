@@ -10,8 +10,6 @@ import Note from './Note.js'
 const App = () => {
     // 완료된 체크표시
     // <i class="fa-solid fa-circle-check"></i>
-    // 쓰레기통 
-    // <i class="fa-solid fa-trash-can"></i>
 
     const [date, setDate] = useState(new Date())
     const [memo, setMemo] = useState("")
@@ -19,7 +17,7 @@ const App = () => {
     const isMinWidth1000 = useMediaQuery({ minWidth: 1000 })
 
     return <>
-        {isMinWidth1000 ? <div id="clock"><Clock id="clock" /></div> : <></>}
+        {isMinWidth1000 ? <div id="clock"><Clock /></div> : <></>}
         {isMinWidth1000 ? <MyCalendar date={date} setDate={setDate} /> : <></>}
         <div id="board" className={isMinWidth1000 ? "normal" : "full"}>
             <ToDoList date={date} />
