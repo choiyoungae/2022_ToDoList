@@ -18,6 +18,16 @@ function ToDoList({date}) {
 
     // 추가 클릭시 
     const handleAdd = (title, content, priority) => {
+
+        if(title == "") {
+            alert("제목과 우선순위는 필수 설정 요소입니다.")
+            return
+        }
+        if(priority == "") {
+            alert("제목과 우선순위는 필수 설정 요소입니다.")
+            return
+        }
+
         setOpen(false);
         console.log("priority : " + priority)
         console.log("title : " + title)

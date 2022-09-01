@@ -15,8 +15,10 @@ function AddList({ open, handleClose, handleAdd}) {
     return <>
         <Dialog open={open} onClose={handleClose}>
             <DialogTitle>할 일 추가</DialogTitle>
-            <DialogContent>
 
+            <form>
+            <DialogContent>
+                
                 <div>
                     <input placeholder="제목" required="required" onChange={(e) => setTitle(e.target.value)}></input>
                 </div>
@@ -31,19 +33,21 @@ function AddList({ open, handleClose, handleAdd}) {
                 <div>
                     <textarea placeholder="세부내용" onChange={(e) => setContent(e.target.value)}></textarea>
                 </div>
+
+                <DialogActions>
+                    <Button style={{fontFamily:"GongGothicLight"}} onClick={handleClose}>취소</Button>
+                    <Button style={{fontFamily:"GongGothicLight"}} onClick={() => handleAdd(title, content, priority)}>추가</Button>
+                </DialogActions>
                 
             </DialogContent>
 
-            <DialogActions>
-                <Button style={{fontFamily:"GongGothicLight"}} onClick={handleClose}>취소</Button>
-                <Button type="submit" style={{fontFamily:"GongGothicLight"}} onClick={() => handleAdd(title, content, priority)}>추가</Button>
-            </DialogActions>
+            
 
+            </form>
+            
         </Dialog>
 
     </>
 }
-
-// Dialog가 form이 아닌 div 요소여서 submit 버튼을 눌러도 required 체크가 되지 않음
 
 export default AddList

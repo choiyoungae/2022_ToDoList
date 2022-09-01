@@ -55,5 +55,14 @@ ul, li {
     top: 3.5%;
     right: 1%;
     border-radius: 10px;
-    
+}
+
+#right-side {
+    width: 29%;
+    height: 87vh;
+    float: right;
+    position: relative;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
 }

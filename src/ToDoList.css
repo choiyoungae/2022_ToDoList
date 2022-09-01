@@ -13,6 +13,7 @@
 
 
 #toDoList {
+    float: left;
     width: 65%;
     height: 87vh;
     background-color: rgba(255, 255, 255, 0.7);
