@@ -6,11 +6,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import './AddList.css'
 
-function AddList({ open, handleClose, handleAdd}) {
+function ModifyList({ open, handleClose, handleAdd, aList }) {
 
-    const [ title, setTitle ] = useState('')
-    const [ content, setContent ] = useState('')
-    const [ priority, setPriority ] = useState('')
+    const [ title, setTitle ] = useState(aList.title)
+    const [ content, setContent ] = useState(aList.content)
+    const [ priority, setPriority ] = useState(aList.priority)
+    console.log("ML", aList)
 
     return <>
         <Dialog open={open} onClose={handleClose}>
@@ -19,7 +20,7 @@ function AddList({ open, handleClose, handleAdd}) {
             <DialogContent>
                 
                 <div>
-                <textarea className="title-text" placeholder="제목" required="required" onChange={(e) => setTitle(e.target.value)}></textarea>
+                <textarea className="title-text" placeholder="제목" required="required" onChange={(e) => setTitle(e.target.value)} defaultValue={aList.title}></textarea>
                 </div>
                 <select name="priority" required="required" onChange={(e) => setPriority(e.target.value)}>
                     <option value="">우선순위</option>
@@ -30,12 +31,12 @@ function AddList({ open, handleClose, handleAdd}) {
                     <option value="low">낮음</option>
                 </select>
                 <div>
-                    <textarea className="content-text" placeholder="세부내용" onChange={(e) => setContent(e.target.value)}></textarea>
+                    <textarea className="content-text" placeholder="세부내용" onChange={(e) => setContent(e.target.value)} defaultValue={aList.content}></textarea>
                 </div>
 
                 <DialogActions>
                     <Button style={{fontFamily:"GongGothicLight"}} onClick={handleClose}>취소</Button>
-                    <Button style={{fontFamily:"GongGothicLight"}} onClick={() => handleAdd(title, content, priority)}>추가</Button>
+                    <Button style={{fontFamily:"GongGothicLight"}} onClick={() => handleAdd(title, content, priority)}>확인</Button>
                 </DialogActions>
                 
             </DialogContent>
@@ -45,4 +46,4 @@ function AddList({ open, handleClose, handleAdd}) {
     </>
 }
 
-export default AddList
+export default ModifyList

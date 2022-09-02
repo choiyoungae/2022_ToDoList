@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import './ToDoList.css'
 import AddList from "./AddList";
@@ -15,14 +15,10 @@ function ToDoList({date}) {
     // 지정 날짜 todo 리스트
     const [showList, setShowList] = React.useState([])
 
-    // addList 하면 todo리스트 목록 로컬로 저장
-    // React.useEffect(() => {
-    //     localStorage.setItem("todos", JSON.stringify(todos))
-    // }, [todos])
-
     // 달력 클릭 시, addList 시 보여줄 리스트 세팅 
     React.useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos))
+
         let got = localStorage.getItem("todos")
         const currentTodos = JSON.parse(got)
 
@@ -36,20 +32,7 @@ function ToDoList({date}) {
 
     }, [todos, date])
 
-    // React.useEffect(() => {
-    //     let got = localStorage.getItem("todos")
-    //     const currentTodos = JSON.parse(got)
-
-    //     const filteredTodos = []
-    //     currentTodos.forEach(element => {
-    //         if(element.todoDate == moment(date).format("YYYY.MM.DD")) {
-    //             filteredTodos.push(element)
-    //         }
-    //     });
-    //     setShowList(filteredTodos)
-
-    // }, [])
-
+    // addList 버튼 클릭시
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -82,6 +65,33 @@ function ToDoList({date}) {
         )
     };
 
+    // 개별 리스트 관련
+
+    // 리스트 삭제
+    const [deleteId, setDeleteId] = useState("")
+    React.useEffect(() => {
+        setTodos(todos.filter(todo => todo.id !== deleteId))
+        setDeleteId("")
+    }, [deleteId])
+
+    // 리스트 수정
+    const [modifyId, setModifyId] = useState("")
+    const [modifyTitle, setModifyTitle] = useState("")
+    const [modifyContent, setModifyContent] = useState("")
+    const [modifyPriority, setModifyPriority] = useState("")
+
+    React.useEffect(() => {
+        let findIdx = todos.findIndex(todo => todo.id === modifyId)
+        let copiedTodos = [...todos]
+        console.log(findIdx)
+        if(findIdx !== -1) {
+            copiedTodos[findIdx].title = modifyTitle
+            copiedTodos[findIdx].content = modifyContent
+            copiedTodos[findIdx].priority = modifyPriority
+        }
+        setTodos(copiedTodos)
+    }, [modifyTitle])
+
 
     return <div id="toDoList">
         <p className="clickedDate">
@@ -90,7 +100,9 @@ function ToDoList({date}) {
         <button className="addList" onClick={handleClickOpen}>+</button>
         <AddList open={open} handleClose={handleClose} handleAdd={handleAdd} />
         <div id="list">
-            {showList.map((aList, index) => <List key={index} aList={aList}/>)}
+            {showList.map((aList, index) => 
+            <List key={index} aList={aList} setDeleteId={setDeleteId} 
+            setModifyId={setModifyId} setModifyTitle={setModifyTitle} setModifyContent={setModifyContent} setModifyPriority={setModifyPriority} />)}
         </div>
     </div>
 }

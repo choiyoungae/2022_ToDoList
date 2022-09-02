@@ -81,6 +81,9 @@
 #aList .list .circle {
     display: inline-block;
 }
+#aList .list .circle:hover {
+    cursor: pointer;
+}
 #aList .list .circle.high {
     color: #e0656c;
 }
@@ -120,11 +123,32 @@
     visibility: hidden;
     transition: .2s;
     background-color: rgba(255, 255, 255, 0.9);
+    max-height: 30px;
 }
 #aList #functions i {
     margin-left: 1vw;
 }
+#aList #functions i:hover {
+    cursor: pointer;
+    color: #1087ff;
+}
 #aList:hover #functions {
     opacity: 1;
+    visibility: visible;
+}
+#aList #functions i p {
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    background:rgba(118, 186, 255, 0.8);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+    position: relative;
+    left: -30%;
+    visibility: hidden;
+    z-index: 10;
+}
+#aList #functions i:hover p {
     visibility: visible;
 }

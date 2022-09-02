@@ -29,4 +29,8 @@ h3 {
     height: 89%;
     margin: 0;
     background-color: transparent;
+    border: 0;
+}
+.memo-text:focus {
+    outline: none;
 }
