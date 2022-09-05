@@ -24,7 +24,7 @@ function ToDoList({date}) {
 
         const filteredTodos = []
         currentTodos.forEach(element => {
-            if(element.todoDate == moment(date).format("YYYY.MM.DD")) {
+            if(element.todoDate === moment(date).format("YYYY.MM.DD")) {
                 filteredTodos.push(element)
             }
         });
@@ -45,11 +45,11 @@ function ToDoList({date}) {
     // 추가 클릭시 
     const handleAdd = (title, content, priority) => {
 
-        if(title == "") {
+        if(title === "") {
             alert("제목과 우선순위는 필수 설정 요소입니다.")
             return
         }
-        if(priority == "") {
+        if(priority === "") {
             alert("제목과 우선순위는 필수 설정 요소입니다.")
             return
         }
@@ -83,7 +83,7 @@ function ToDoList({date}) {
     React.useEffect(() => {
         let findIdx = todos.findIndex(todo => todo.id === modifyId)
         let copiedTodos = [...todos]
-        console.log(findIdx)
+
         if(findIdx !== -1) {
             copiedTodos[findIdx].title = modifyTitle
             copiedTodos[findIdx].content = modifyContent
@@ -91,6 +91,20 @@ function ToDoList({date}) {
         }
         setTodos(copiedTodos)
     }, [modifyTitle])
+
+    // 리스트 연기
+    const [delayId, setDelayId] = useState("")
+    const [delayDate, setDelayDate] = useState("")
+
+    React.useEffect(() => {
+        let findIdx = todos.findIndex(todo => todo.id === delayId)
+        let copiedTodos = [...todos]
+
+        if(findIdx !== -1) {
+            copiedTodos[findIdx].todoDate = delayDate
+        }
+        setTodos(copiedTodos)
+    }, [delayDate])
 
 
     return <div id="toDoList">
@@ -102,7 +116,8 @@ function ToDoList({date}) {
         <div id="list">
             {showList.map((aList, index) => 
             <List key={index} aList={aList} setDeleteId={setDeleteId} 
-            setModifyId={setModifyId} setModifyTitle={setModifyTitle} setModifyContent={setModifyContent} setModifyPriority={setModifyPriority} />)}
+            setModifyId={setModifyId} setModifyTitle={setModifyTitle} setModifyContent={setModifyContent} setModifyPriority={setModifyPriority}
+            setDelayId={setDelayId} setDelayDate={setDelayDate} />)}
         </div>
     </div>
 }

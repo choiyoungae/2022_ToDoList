@@ -16,10 +16,12 @@
 #calendar.small {
     width: 18%;
     left: 3.5%;
+    padding: 0;
 }
 #calendar.big {
     width: 23%;
     left: 3%;
+    padding: 0;
 }
 
 .react-calendar {
@@ -27,6 +29,7 @@
     max-width: 100%;
     background: white;
     line-height: 1.125em;
+    padding: 5px;
 }
 .react-calendar--doubleView {
     width: 700px;

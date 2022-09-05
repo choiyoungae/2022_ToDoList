@@ -6,15 +6,16 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import './AddList.css'
 
-function ModifyList({ open, handleClose, handleAdd, aList }) {
+function ModifyList({ openModify, handleModifyClose, handleModifyAdd, aList }) {
+
+    const open = openModify
 
     const [ title, setTitle ] = useState(aList.title)
     const [ content, setContent ] = useState(aList.content)
     const [ priority, setPriority ] = useState(aList.priority)
-    console.log("ML", aList)
 
     return <>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog open={open} onClose={handleModifyClose}>
             <DialogTitle>할 일 추가</DialogTitle>
 
             <DialogContent>
@@ -35,8 +36,8 @@ function ModifyList({ open, handleClose, handleAdd, aList }) {
                 </div>
 
                 <DialogActions>
-                    <Button style={{fontFamily:"GongGothicLight"}} onClick={handleClose}>취소</Button>
-                    <Button style={{fontFamily:"GongGothicLight"}} onClick={() => handleAdd(title, content, priority)}>확인</Button>
+                    <Button style={{fontFamily:"GongGothicLight"}} onClick={handleModifyClose}>취소</Button>
+                    <Button style={{fontFamily:"GongGothicLight"}} onClick={() => handleModifyAdd(title, content, priority)}>확인</Button>
                 </DialogActions>
                 
             </DialogContent>
