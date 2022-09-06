@@ -149,6 +149,10 @@
     cursor: pointer;
     color: #1087ff;
 }
+#aList.checked #functions i:hover {
+    cursor: default;
+    color: #bbb;
+}
 #aList:hover #functions {
     opacity: 1;
     visibility: visible;
@@ -168,4 +172,7 @@
 }
 #aList #functions i:hover p {
     visibility: visible;
+}
+#aList.checked #functions i:hover p {
+    visibility: hidden;
 }
