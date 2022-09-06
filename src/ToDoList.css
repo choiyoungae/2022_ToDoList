@@ -29,6 +29,23 @@
     font-family: "GongGothicMedium";
     font-size: 40px;
 }
+#toDoList .fa-sort {
+    width: 40px;
+    height: 40px;
+    background-color: #76baff;
+    color: white;
+    border-radius: 50%;
+    font-size: 25px;
+    line-height: 40px;
+    position: absolute;
+    left: 6%;
+}
+#toDoList .fa-sort:hover {
+    box-shadow: 5px 5px 5px #1087ff inset;
+}
+#toDoList .fa-sort:active {
+    background-color: #1087ff;
+}
 #toDoList .addList {
     width: 40px;
     height: 40px;
@@ -84,19 +101,19 @@
 #aList .list .circle:hover {
     cursor: pointer;
 }
-#aList .list .circle.high {
+#aList .list .circle.a {
     color: #e0656c;
 }
-#aList .list .circle.little-high {
+#aList .list .circle.b {
     color: #ed9258;
 }
-#aList .list .circle.middle {
+#aList .list .circle.c {
     color: #e9d275;
 }
-#aList .list .circle.little-low {
+#aList .list .circle.d {
     color: #96ce5b;
 }
-#aList .list .circle.low {
+#aList .list .circle.e {
     color: #819fcb;
 }
 #aList.checked .list .circle {

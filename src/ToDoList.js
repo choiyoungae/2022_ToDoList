@@ -107,7 +107,17 @@ function ToDoList({date}) {
     }, [delayDate])
 
 
+    // 리스트 정렬
+    const sortList = () => {
+
+        // 리액트의 특성상 배열내부의 값이 바뀌더라도 배열 자체가 다르지 않으면 리렌더링 하지 않으므로 배열을 복사해서 sort
+        let copiedShowList = [...showList]
+        setShowList(copiedShowList.sort((a, b) => a.priority.localeCompare(b.priority)))
+        console.log(showList)
+    }
+
     return <div id="toDoList">
+        <i className="fa-solid fa-sort" onClick={sortList}></i>
         <p className="clickedDate">
             {moment(date).format("YYYY.MM.DD")}
         </p>
