@@ -25,11 +25,11 @@ function ModifyList({ openModify, handleModifyClose, handleModifyAdd, aList }) {
                 </div>
                 <select name="priority" required="required" onChange={(e) => setPriority(e.target.value)}>
                     <option value="">우선순위</option>
-                    <option value="high">높음</option>
-                    <option value="little-high">다소 높음</option>
-                    <option value="middle">중간</option>
-                    <option value="little-low">다소 낮음</option>
-                    <option value="low">낮음</option>
+                    <option value="a">높음</option>
+                    <option value="b">다소 높음</option>
+                    <option value="c">중간</option>
+                    <option value="d">다소 낮음</option>
+                    <option value="e">낮음</option>
                 </select>
                 <div>
                     <textarea className="content-text" placeholder="세부내용" onChange={(e) => setContent(e.target.value)} defaultValue={aList.content}></textarea>
