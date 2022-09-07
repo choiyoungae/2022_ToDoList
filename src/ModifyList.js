@@ -29,7 +29,7 @@ function ModifyList({ openModify, handleModifyClose, handleModifyAdd, aList }) {
                     <option value="b">다소 높음</option>
                     <option value="c">중간</option>
                     <option value="d">다소 낮음</option>
-                    <option value="e">낮음</option>
+                    <option value="e">낮음</option> 
                 </select>
                 <div>
                     <textarea className="content-text" placeholder="세부내용" onChange={(e) => setContent(e.target.value)} defaultValue={aList.content}></textarea>
